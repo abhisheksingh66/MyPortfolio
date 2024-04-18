@@ -1,0 +1,132 @@
+.navbar {
+    background-color: var(--yellow-theme-nav-background-color);
+    height: 80px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 1.2rem;
+    position: sticky;
+    top: 0; 
+    z-index: 1000; 
+    
+    &__container {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: inherit;
+      padding: 0px 20px;
+      flex: 1;
+  
+      &__logo {
+        color: var(--yellow-theme-main-color);
+        cursor: pointer;
+      }
+  
+      &__menu {
+        display: flex;
+        list-style: none;
+        text-align: center;
+  
+        &__item {
+          line-height: 40px;
+          margin-right: 1.5rem;
+          font-size: 1.6rem;
+  
+          &::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 0;
+            background: transparent;
+            transition: width 0.5s ease, background-color 0.5s ease;
+          }
+  
+          &:hover::after {
+            width: 100%;
+            background: var(--yellow-theme-main-color);
+          }
+  
+          &__links {
+            color: var(--yellow-theme-main-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem; 
+          }
+        }
+      }
+    }
+  }
+  
+  .nav-icon {
+    display: none;
+  }
+  
+  @media only screen and (max-width : 768px) {
+    .navbar__container__menu {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      position: absolute;
+      top: 80px;
+      left: -110%;
+      opacity: 0; 
+      transition: all 0.5s ease;
+      backdrop-filter: blur(10px); 
+      background-color: rgba(0, 0, 0, 0.5); 
+      
+      &.active {
+        background: rgba(24, 24, 24, 0.85); 
+        left: 0px;
+        opacity: 1;
+      }
+  
+      &__item {
+        border-bottom: 1px solid #282828;
+        margin: 0px;
+        padding: 20px 0px;
+      }
+    }
+  
+    .nav-icon {
+      display: block;
+      cursor: pointer;
+      color: var(--yellow-theme-main-color);
+      padding-right: 20px;
+    }
+  }
+  
+
+
+
+
+  @keyframes rotateIcon {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  
+  .icon-wrapper {
+    perspective: 1000px; 
+  }
+  
+  .react-icon {
+    animation: rotateIcon 5s linear infinite; 
+  }
+  
+
+  .navbar__container__menu__item__links.active-link {
+    background-color: transparent; 
+    border:1px solid #EFF396;
+    border-radius: 50px;
+  }
+  
+
+  .btn{
+    background-color:transparent ;
+    // border:1px solid #EFF396; 
+    // border-radius: 50px;
+    font-size: 1.7rem;
+  }

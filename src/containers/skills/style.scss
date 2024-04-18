@@ -1,0 +1,96 @@
+.skills{
+    &__content-wrapper {
+        display: flex;
+        padding: 20px;
+        gap: 20px;
+
+        &__inner-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            &__category-text{
+                display: inline-block;
+                color: var(--yellow-theme-main-color);
+                font-size: 22px;
+                font-weight: 700;
+                line-height: 1rem;
+                letter-spacing: 0.5px;
+                position: relative;
+                // text-transform: uppercase;
+                padding: 5px 10px;
+                border-bottom: 2px solid var(--yellow-theme-main-color);
+            }
+            &__category-text::before,  &__category-text::after{
+                position: absolute;
+                content: '';
+                width: 2px ;
+                height: 5px;
+                background-color: var(--yellow-theme-main-color);
+                bottom: -1px;
+
+            }
+            &__category-text::before{
+                left: 0;
+
+
+            }
+            &__category-text::after{
+                right: 0;
+            }
+            __progressbar-container{
+                width: 100%;
+
+            }
+            .progressbar-wrapper{
+                padding: 50px 0px 0px 0px;
+
+                h1{
+                    font-size: 1.8rem;
+                    margin: 0 0 10px;
+                    font-weight: 500;
+                    text-transform: uppercase;
+                    color: var(--yellow-theme-sub-text-color);
+                    
+                }
+
+            }
+        }
+    }
+}
+@media only screen and (max-width:768px){
+    .skills{
+        &__content-wrapper{
+            flex-direction: column;
+        }
+    }
+  .skills__content-wrapper__inner-content__progressbar-container{
+    margin-bottom: 20px;
+    
+  }
+}
+
+// @keyframes rotate {
+//     0% {
+//       transform: rotate(0deg);
+//     }
+//     100% {
+//       transform: rotate(360deg);
+//     }
+//   }
+  
+ 
+  
+
+
+  .icon-show {
+    perspective: 1000px; // Set the perspective for 3D effect #114232 FAA300;
+    color:#8ecae6;
+    // #A5DD9B;
+  }
+  
+  .rotate-frequently {
+    animation: rotateIcon 5s linear infinite; // Rotate the icon continuously
+  }
+
